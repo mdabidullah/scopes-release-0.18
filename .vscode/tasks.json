@@ -1,0 +1,64 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make scopes",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "-C",
+                "${workspaceRoot}/build"
+            ],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}/build"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error|note|fatal error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": "build"
+        },
+        {
+            "label": "rebuild makefile",
+            "type": "shell",
+            "command": "rm -rf ${workspaceRoot}/build && genie gmake",
+            "problemMatcher": []
+        },
+        {
+            "label": "scopes",
+            "type": "shell",
+            "command": "${workspaceRoot}/scopes",
+            "problemMatcher": {
+                "owner": "scopes",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}/build"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error|note|fatal error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "makedocs",
+            "type": "shell",
+            "command": "cd ${workspaceRoot}/doc && make html",
+            "problemMatcher": []
+        }
+    ]
+}

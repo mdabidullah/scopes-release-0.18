@@ -1,0 +1,43 @@
+site_name: Scopes
+docs_dir: docs
+nav:
+    - "Scopes":
+        - "About Scopes": about.md
+        - "Getting Started": intro.md
+        - "The Scopes Tutorial": tutorial.md
+        - "Scopes for C/C++ Users": cpp_users.md
+        - "Notation": dataformat.md
+    - "Modules Reference":
+        - "globals": module-core.md
+        - "Array": module-Array.md
+        - "Box": module-Box.md
+        - "Capture": module-Capture.md
+        - "chaining": module-chaining.md
+        - "console": module-console.md
+        - "enum": module-enum.md
+        - "FunctionChain": module-FunctionChain.md
+        - "glm": module-glm.md
+        - "glsl": module-glsl.md
+        - "itertools": module-itertools.md
+        - "Map": module-Map.md
+        - "Option": module-Option.md
+        - "property": module-property.md
+        - "Rc": module-Rc.md
+        - "Set": module-Set.md
+        - "spicetools": module-spicetools.md
+        - "String": module-String.md
+        - "struct": module-struct.md
+        - "testing": module-testing.md
+        - "UTF-8": module-UTF-8.md
+theme:
+    name: readthedocs
+    highlightjs: false
+extra_css: [extra.css, pygments.css]
+markdown_extensions:
+    - admonition:
+    - attr_list:
+    - codehilite:
+    - def_list:
+    - fenced_code:
+    - toc:
+        permalink: "#"
